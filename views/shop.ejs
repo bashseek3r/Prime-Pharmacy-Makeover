@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Meds | Prime Pharmacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50">
+
+<header class="bg-white shadow-sm border-b border-gray-100 py-4 px-8 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-[#008B8B] rounded-lg flex items-center justify-center text-white shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path>
+            </svg>
+        </div>
+        <span class="font-extrabold text-xl text-[#002B45] tracking-tight uppercase">Prime Pharmacy</span>
+    </div>
+    <nav class="hidden md:flex space-x-8 text-[13px] font-bold text-[#002B45]">
+        <a href="/" class="hover:text-[#008B8B] transition-colors">HOME</a>
+        <a href="/shop" class="text-[#008B8B]">SHOP</a>
+    </nav>
+</header>
+
+    <main class="max-w-7xl mx-auto px-8 py-12">
+        
+        <div class="mb-10">
+            <h1 class="text-4xl font-black text-[#002B45]">All Medications</h1>
+            <p class="text-gray-500 mt-2">Browse our full range of certified health products in Abuja.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12">
+            
+            <aside class="w-full md:w-1/4 space-y-8">
+                <div>
+                    <h3 class="font-bold text-[#002B45] mb-4 uppercase text-xs tracking-widest">Categories</h3>
+                    <div class="flex flex-col space-y-3">
+                        <label class="flex items-center space-x-3 text-sm text-gray-600 cursor-pointer">
+                            <input type="checkbox" class="rounded text-[#008B8B] focus:ring-[#008B8B]">
+                            <span>Pain Relief</span>
+                        </label>
+                        <label class="flex items-center space-x-3 text-sm text-gray-600 cursor-pointer">
+                            <input type="checkbox" class="rounded text-[#008B8B] focus:ring-[#008B8B]">
+                            <span>Vitamins & Supplements</span>
+                        </label>
+                        <label class="flex items-center space-x-3 text-sm text-gray-600 cursor-pointer">
+                            <input type="checkbox" class="rounded text-[#008B8B] focus:ring-[#008B8B]">
+                            <span>Baby Care</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-[#002B45] mb-4 uppercase text-xs tracking-widest">Price Range</h3>
+                    <input type="range" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#008B8B]">
+                    <div class="flex justify-between text-xs text-gray-400 mt-2">
+                        <span>₦0</span>
+                        <span>₦50,000+</span>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="w-full md:w-3/4">
+                <div class="flex justify-between items-center mb-8 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <p class="text-sm text-gray-500 font-medium">Showing Top Products</p>
+                    <select class="text-sm font-bold text-[#002B45] outline-none bg-transparent">
+                        <option>Newest First</option>
+                        <option>Price: Low to High</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% for(let i=0; i < 6; i++) { %>
+                        <div class="group bg-white rounded-3xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-all relative">
+                            <div class="h-48 bg-gray-50 rounded-2xl mb-4 flex items-center justify-center relative">
+                                <svg class="w-12 h-12 text-gray-200" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16.5l-7.9 4.44c-.16.09-.36.14-.57.14s-.41-.05-.57-.14l-7.9-4.44v-9l7.9-4.44c.16-.09.36-.14.57-.14s.41.05.57.14l7.9 4.44v9z"/></svg>
+                            </div>
+                            <p class="text-[10px] font-bold text-[#008B8B] uppercase tracking-widest">General Meds</p>
+                            <h4 class="font-extrabold text-[#002B45] text-base mb-3">Product Name <%= i + 1 %></h4>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-black text-[#002B45]">₦2,500</span>
+                                <button class="bg-[#f0f9f9] p-2 rounded-xl text-[#008B8B] hover:bg-[#008B8B] hover:text-white transition-all">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 px-8 mt-16">
+    <div class="max-w-7xl mx-auto">
+        <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+            <p>© 2026 Prime Pharmacy. 
+                <a href="tel:+23480077463" class="hover:text-[#008B8B] font-bold transition-colors">+234 800 PRIME</a>. 
+                All rights reserved.
+            </p>
+            
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-[#008B8B] transition-colors">Instagram</a>
+                <a href="#" class="hover:text-[#008B8B] transition-colors">WhatsApp</a>
+                <a href="#" class="hover:text-[#008B8B] transition-colors">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+

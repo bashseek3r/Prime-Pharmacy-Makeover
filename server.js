@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// ROUTE: Shop All Page
+app.get('/shop', (req, res) => {
+    res.render('shop'); // This looks for shop.ejs in your views folder
+});
+
 // Start the server on Port 3000
 const PORT = 3000;
 app.listen(PORT, () => {
